@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define mx 1000
+#define p 1000000007
+int dp [mx] [mx];
+
+int ncr (int n, int r)
+{
+    if (n==r) dp[n][r]=1;
+    if (n==1) dp[n][r]=n;
+    if (n==0) dp[n][r]=1;
+
+    if (dp [n][r] == -1)
+        dp [n][r]=(ncr(n-1,r-1)%p+ncr(n-1,r)%p)%p;
+    return dp[n][r];
+}
+int main()
+{
+  memset(dp,-1,sizeof(dp));
+  cout << ncr (4,3);
+  return 0;
+}
