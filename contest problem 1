@@ -1,0 +1,15 @@
+#include <stdio.h>
+ 
+int main() {
+    int w;
+    scanf("%d", &w);  // Input the weight of the watermelon
+ 
+    // Check if it's possible to split the weight into two even parts
+    if (w > 2 && w % 2 == 0) {
+        printf("YES\n");  // If possible, print "YES"
+    } else {
+        printf("NO\n");   // Otherwise, print "NO"
+    }
+ 
+    return 0;
+}
